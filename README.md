@@ -17,12 +17,12 @@
     - [MessageBuilder](#messagebuilder---class)
 - [License](#license)
 
-# Installation
-```npm install discord-webhook-node``` or ```yarn add discord-webhook-node```
+# Instalação
+```npm install rafaelsupport/discord-webhook-node``` or ```yarn add rafaelsupport/discord-webhook-node```
 
-# Examples
+# Exemplos
 
-## Basic use
+## Uso básico
 ```js
 const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook("YOUR WEBHOOK URL");
@@ -34,7 +34,7 @@ hook.setAvatar(IMAGE_URL);
 hook.send("Hello there!");
 ```
 
-## Custom embeds
+## Embeds customizados
 ```js
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 const hook = new Webhook("YOUR WEBHOOK URL");
@@ -55,9 +55,9 @@ const embed = new MessageBuilder()
 hook.send(embed);
 ```
 
-Keep in mind that the custom embed method `setColor` takes in a decimal color/a hex color (pure black and white hex colors will be innacurate). You can convert hex colors to decimal using this website here: [https://convertingcolors.com](https://convertingcolors.com)
+Tenha em mente que o método custom embed `setColor` usa uma cor decimal/uma cor hexadecimal (as cores hexadecimais puras em preto e branco serão imprecisas). Você pode converter cores hexadecimais em decimais usando este site aqui: [https://convertingcolors.com](https://convertingcolors.com)
 
-## Sending files
+## Envio de arquivos
 ```js
 const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook('YOUR WEBHOOK URL');
@@ -65,7 +65,7 @@ const hook = new Webhook('YOUR WEBHOOK URL');
 hook.sendFile('../yourfilename.png');
 ```
 
-## Preset messages
+## Mensagens predefinidas
 ```js
 const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook('YOUR WEBHOOK URL');
@@ -83,7 +83,7 @@ hook.warning('**Warning hook**', 'Warning field title here', 'Warning field valu
 hook.error('**Error hook**', 'Error field title here', 'Error field value here');
 ```
 
-## Custom settings
+## Configurações customizadas
 ```js
 const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook({
@@ -98,8 +98,8 @@ hook.setUsername('Username'); //Overrides the default webhook username
 hook.setAvatar('YOUR_AVATAR_URL'); //Overrides the default webhook avatar
 ```
 
-# Notes
-discord-webhook-node is a promise based library, which means you can use `.catch`, `.then`, and `await`, although if successful will not return any values. For example:
+# Notas
+discord-webhook-node é uma biblioteca baseada em promise, o que significa que você pode usar `.catch`, `.then` e `await`, embora se for bem-sucedido não retornará nenhum valor. Por exemplo:
 
 ```js
 const { Webhook } = require('discord-webhook-node');
@@ -110,7 +110,7 @@ hook.send("Hello there!")
 .catch(err => console.log(err.message));
 ```
 
-or using async:
+ou usando async:
 ```js
 const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook("YOUR WEBHOOK URL");
@@ -126,7 +126,7 @@ const hook = new Webhook("YOUR WEBHOOK URL");
 })();
 ```
 
-By default, it will handle Discord's rate limiting, and if there is an error sending the message (other than rate limiting), an error will be thrown. You can change these options with the custom settings options below.
+Por padrão, ele lidará com a limitação de taxa do Discord e, se houver um erro ao enviar a mensagem (diferente da limitação de taxa), um erro será gerado. Você pode alterar essas opções com as opções de configurações personalizadas abaixo.
 
 # API
 ## Webhook - class
